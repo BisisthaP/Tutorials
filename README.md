@@ -5,50 +5,18 @@ It is designed to help me (and potentially others) revisit, run, and modify the 
 
 🗂 Folder Structure
 The repository is organized by specific tutorial projects. Each folder represents a complete, self-contained project or major section from a single YouTube tutorial.
-
-Folder Name
-
-Description
-
-Source/Tutorial Link
-
-fastapi-todo-app
-
-Code and configuration for building a simple ToDo API using FastAPI.
-
-[Link to FastAPI Tutorial A]
-
-pyspark-data-pipeline
-
-Code for a simple ETL process using PySpark, focusing on basic transformations.
-
-[Link to PySpark Tutorial B]
-
-react-portfolio-v1
-
-A frontend project focusing on state management and component lifecycle in React.
-
-[Link to React Tutorial C]
-
 To find a specific tutorial's code, look for a folder with a descriptive name.
 
 ⚙️ Prerequisites and Setup
 Before running any of the projects, ensure you have the following installed (these are generic examples, adjust as needed):
-
 Python: Version 3.10+
-
 Virtual Environments: Use venv or conda for isolation.
-
 Node.js & npm/yarn: For any JavaScript-based tutorials.
 
 Running a Project Example
-Navigate to the project folder:
+1. Navigate to the project folder: cd fastapi-todo-app
 
-cd fastapi-todo-app
-
-Install dependencies (check for a requirements.txt or package.json):
-
-pip install -r requirements.txt
+2. Install dependencies (check for a requirements.txt or package.json): pip install -r requirements.txt
 
 Follow the project-specific instructions (usually contained in a smaller project-readme.md inside the folder) to run the application.
 
