@@ -52,3 +52,28 @@ def get_todo(first_n: int = None):  #query parameter
 #can access the specific todo item by going to the URL - http://127.0.0.1:9999/todos/1
 #where 1 is the todo_id
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
+# The router maps a GET request at the path "/users/123" to the function below
+@app.get("/users/{user_id}")
+async def read_user(user_id: int):
+    # The path parameter {user_id} is automatically passed to the function
+    return {"user_id": user_id, "detail": "User data"}
+
+from fastapi.responses import JSONResponse
+
+@app.get("/data")
+def get_data():
+    # FastAPI/Starlette converts this Python dict into a JSON response
+    return {"message": "Hello from the server"}
+
+@app.get("/custom_response")
+def custom_response():
+    # You can also manually return a specific Starlette response
+    return JSONResponse(
+        content={"status": "ok"},
+        status_code=202,
+        headers={"X-Custom-Header": "FastAPI-Powered"}
+    )
