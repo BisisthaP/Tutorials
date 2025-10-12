@@ -77,3 +77,36 @@ def custom_response():
         status_code=202,
         headers={"X-Custom-Header": "FastAPI-Powered"}
     )
+
+from fastapi.middleware.cors import CORSMiddleware
+# The CORSMiddleware is a Starlette component used directly in FastAPI
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all HTTP methods
+    allow_headers=["*"],
+)
+
+# Every request will pass through this middleware before hitting the router.
+# The middleware adds the necessary CORS headers to allow cross-domain requests.
+
+from fastapi import WebSocket
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    # 1. Accept the connection (Establishes the channel)
+    await websocket.accept() 
+    try:
+        while True:
+            # 2. Receive data from the client
+            data = await websocket.receive_text()
+            
+            # 3. Send data back to the client
+            await websocket.send_text(f"Message received: {data}")
+    except Exception:
+        # 4. Handle connection close
+        print(f"Client disconnected")
+    finally:
+        await websocket.close()
