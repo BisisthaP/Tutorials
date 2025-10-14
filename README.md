@@ -25,4 +25,13 @@ Follow the project-specific instructions (usually contained in a smaller project
 🤝 **Contribution and Learning**
 As this is primarily a personal learning repository, contributions are not expected, but feel free to fork it and use it as a template for your own learning journey!
 
+**List of topics to learn - **
+1. Flask
+2. Docker
+3. Jenkins
+4. GitHub Actions
+5. Kubernetes
+6. GCP
+7. AWS 
+
 **Happy coding!**
